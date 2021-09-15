@@ -2,7 +2,6 @@
 Documentation  General keywords that are specific to Apps functionality
 Library  AppiumLibrary
  
-
 *** Keywords ***
 View Metrics Of Your Hearing In Silence
     [Documentation]  View Audiogram results from a silent hearing test

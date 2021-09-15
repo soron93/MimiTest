@@ -1,7 +1,6 @@
 *** Settings ***
-
+Documentation  General keywords that are specific for loggin in and logging out.
 Library  AppiumLibrary
-
 
 *** Keywords ***
 Go to Log In Page
@@ -25,7 +24,6 @@ Login Verified
     AppiumLibrary.Wait Until Page Contains Element  //android.widget.TextView[@resource-id='io.mimi.ht:id/pttEnvironmentResultTv' and @text='Silence']    
 
 Log Out
-    #AppiumLibrary.Wait Until Page Contains Element  //android.widget.TextView[@resource-id='io.mimi.ht:id/_title']
     Swipe By Percent    50     99     50    10  1280
     AppiumLibrary.Wait Until Page Contains Element  id=io.mimi.ht:id/logOutBtn
     Click Element   id=io.mimi.ht:id/logOutBtn 

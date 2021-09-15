@@ -1,7 +1,6 @@
 *** Settings ***
-
+Documentation  Custom keyword that is specific to manage account functionality.
 Library  AppiumLibrary
-
 
 *** Keywords ***
 Checks if user can manage account and export JSON data
