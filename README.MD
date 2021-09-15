@@ -18,19 +18,18 @@
 
     * We will adhere to the Android developer guidelines during the hearing test as well as when accessing the audiogram for use with other applications and services (eg, Spotify, Youtube, Phone calls etc).
 
-        * Check when another app gains audio focus, the SUT has stopped or paused playing, or duck the volume down.
+        * Check when another app gains audio focus, the SUT has stopped or paused playing, or the volume ducked down.
 
-        * Check when playback stops or abandons audio focus. However, if the user pauses playback abandoning audio focus is not required but may resume focus later.
+        * Check when playback stops audio focus. However, if the user pauses playback audio focus is not required but may resume focus later.
 
-        * Check for delayed focus gain which can occur when the system can't grant access because an app has "locked" focus, for example during a phone call. In this situation the SUT shall not output audio playback because it does not have focus. 
+        * Check for delayed focus gain. This can occur when the system can't grant access because an app has "locked" focus, an example for this scenario would be during a phone call. In this situation the SUT shall not output audio playback because it does not have focus. 
 
-    * Responding to an audio focus change
-         * In case of temporary loss of audio focus
-        the SUT should duck or pause playing and maintain the same state. During a transient loss of audio focus, the SUT should continue to monitor changes in audio focus and be prepared to resume normal playback when the SUT regains the focus. When the blocking app abandons focus, The SUT can restore the volume to normal level or restart playback.
+        * Check for temporary loss of audio focus
+        the SUT volume should duck down or pause playing and maintain the same state. During a temporary loss of audio focus, the SUT should monitor changes in audio focus and be prepared to resume normal playback when the SUT regains the focus. When the blocking app frees the audio focus, The SUT can restore the volume to normal level or restart normal playback.
 
-         * In case of permanent loss of audio focus
-        the SUT should pause playback immediately. 
-        To restart playback, the user must take an explicit action, like pressing the play transport control in a notification or app UI.
+        * Check for permanent loss of audio focus.
+        The SUT should pause playback immediately. 
+        The user must take an explicit action to restart audio playback, pressing the play for example in transport section of notifications or app UI.
 
         * Check that the delayed stop does not suddenly start in if the user restarts playback, no volume jumping as this could be a painful experience for the user.
 * * *
