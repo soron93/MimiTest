@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.8.3 on darwin)" generated="20210915 01:35:05.742" rpa="false" schemaversion="2">
+<suite id="s1" name="Full Regression" source="/Users/beta/Mimi/Tests">
+<suite id="s1-s1" name="MimiTest" source="/Users/beta/Mimi/Tests/MimiTest.robot">
+<kw name="Begin App Test" library="Common" type="SETUP">
+<doc>Mimi hearing test is launched</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>appPackage=io.mimi.ht</arg>
+<arg>appActivity=io.mimi.ht.SplashScreenActivity</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210915 01:35:05.957" endtime="20210915 01:35:10.570"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:05.956" endtime="20210915 01:35:10.570"/>
+</kw>
+<test id="s1-s1-t1" name="User should be able to log and out of their account">
+<kw name="User logs in" library="MimiApp">
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${START_PAGE}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:10.575" endtime="20210915 01:35:14.787"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:10.574" endtime="20210915 01:35:14.787"/>
+</kw>
+<kw name="Go to Log In Page" library="LoginLogout">
+<doc>User is directed to landing page</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:14.788" endtime="20210915 01:35:14.825"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:14.829" level="INFO">Clicking element 'id=io.mimi.ht:id/alreadyHaveTv'.</msg>
+<status status="PASS" starttime="20210915 01:35:14.825" endtime="20210915 01:35:14.913"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:14.788" endtime="20210915 01:35:14.914"/>
+</kw>
+<kw name="Enter Email Address" library="LoginLogout">
+<doc>Enter user name</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:14.914" endtime="20210915 01:35:15.100"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:15.103" level="INFO">Typing text 'your_new_qa@protonmail.com' into text field 'id=io.mimi.ht:id/loginEmail'</msg>
+<status status="PASS" starttime="20210915 01:35:15.101" endtime="20210915 01:35:16.504"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:14.914" endtime="20210915 01:35:16.504"/>
+</kw>
+<kw name="Enter Password" library="LoginLogout">
+<doc>Enter password</doc>
+<kw name="Input Password" library="AppiumLibrary">
+<arg>${ENTER_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:16.509" level="INFO">Typing password into text field 'id=io.mimi.ht:id/loginPassword'</msg>
+<status status="PASS" starttime="20210915 01:35:16.505" endtime="20210915 01:35:17.551"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:16.505" endtime="20210915 01:35:17.552"/>
+</kw>
+<kw name="Press Login Button" library="LoginLogout">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:17.556" level="INFO">Clicking element 'id=io.mimi.ht:id/loginButton'.</msg>
+<status status="PASS" starttime="20210915 01:35:17.553" endtime="20210915 01:35:18.110"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:17.552" endtime="20210915 01:35:18.110"/>
+</kw>
+<kw name="Login Verified" library="LoginLogout">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/pttEnvironmentResultTv' and @text='Silence']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:18.111" endtime="20210915 01:35:19.844"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:18.111" endtime="20210915 01:35:19.844"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:10.572" endtime="20210915 01:35:19.844"/>
+</kw>
+<kw name="User logs out" library="MimiApp">
+<kw name="Log Out" library="LoginLogout">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>99</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>1280</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210915 01:35:19.845" endtime="20210915 01:35:21.482"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/logOutBtn</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:21.482" endtime="20210915 01:35:21.912"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/logOutBtn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:21.915" level="INFO">Clicking element 'id=io.mimi.ht:id/logOutBtn'.</msg>
+<status status="PASS" starttime="20210915 01:35:21.912" endtime="20210915 01:35:21.996"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='android:id/message' and @text='This will disable your Hearing ID.']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:21.996" endtime="20210915 01:35:22.569"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:22.572" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<status status="PASS" starttime="20210915 01:35:22.569" endtime="20210915 01:35:22.655"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:19.845" endtime="20210915 01:35:22.656"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:19.845" endtime="20210915 01:35:22.656"/>
+</kw>
+<doc>Checks that user data is stored and is valid</doc>
+<tag>Current</tag>
+<status status="PASS" starttime="20210915 01:35:10.571" endtime="20210915 01:35:22.656"/>
+</test>
+<test id="s1-s1-t2" name="User should not be able to log in to their account if incorrect credentials are provided">
+<kw name="Check if user logs in with incorrect password" library="MimiApp">
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${START_PAGE}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:22.660" endtime="20210915 01:35:22.806"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:22.659" endtime="20210915 01:35:22.807"/>
+</kw>
+<kw name="Go to Log In Page" library="LoginLogout">
+<doc>User is directed to landing page</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:22.808" endtime="20210915 01:35:23.276"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:23.279" level="INFO">Clicking element 'id=io.mimi.ht:id/alreadyHaveTv'.</msg>
+<status status="PASS" starttime="20210915 01:35:23.276" endtime="20210915 01:35:23.360"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:22.807" endtime="20210915 01:35:23.361"/>
+</kw>
+<kw name="Enter Email Address" library="LoginLogout">
+<doc>Enter user name</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:23.362" endtime="20210915 01:35:23.499"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:23.503" level="INFO">Typing text 'your_new_qa@protonmail.com' into text field 'id=io.mimi.ht:id/loginEmail'</msg>
+<status status="PASS" starttime="20210915 01:35:23.499" endtime="20210915 01:35:24.859"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:23.361" endtime="20210915 01:35:24.859"/>
+</kw>
+<kw name="Login with incorrect password" library="LoginLogout">
+<kw name="Input Password" library="AppiumLibrary">
+<arg>${ENTER_PASSWORD}</arg>
+<arg>${INCORRECT_PASSWORD}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:24.864" level="INFO">Typing password into text field 'id=io.mimi.ht:id/loginPassword'</msg>
+<status status="PASS" starttime="20210915 01:35:24.860" endtime="20210915 01:35:25.399"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:24.860" endtime="20210915 01:35:25.399"/>
+</kw>
+<kw name="Press Login Button" library="LoginLogout">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:25.402" level="INFO">Clicking element 'id=io.mimi.ht:id/loginButton'.</msg>
+<status status="PASS" starttime="20210915 01:35:25.400" endtime="20210915 01:35:25.964"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:25.400" endtime="20210915 01:35:25.964"/>
+</kw>
+<kw name="Verify Incorrect Password" library="LoginLogout">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/headerErrorTv' and @text='Your email or password is incorrect.']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:25.965" endtime="20210915 01:35:26.704"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:25.965" endtime="20210915 01:35:26.704"/>
+</kw>
+<kw name="Clear Field" library="LoginLogout">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${ENTER_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:26.707" level="INFO">Clear text field 'id=io.mimi.ht:id/loginPassword'</msg>
+<status status="PASS" starttime="20210915 01:35:26.704" endtime="20210915 01:35:26.743"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20210915 01:35:26.744" endtime="20210915 01:35:27.995"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:26.704" endtime="20210915 01:35:27.995"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:22.658" endtime="20210915 01:35:27.995"/>
+</kw>
+<doc>Checks that invalid credentials wont grant access</doc>
+<tag>Current</tag>
+<status status="PASS" starttime="20210915 01:35:22.657" endtime="20210915 01:35:27.995"/>
+</test>
+<test id="s1-s1-t3" name="User should be able to view, rename and export their Audiogram">
+<kw name="User logs in" library="MimiApp">
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${START_PAGE}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:27.998" endtime="20210915 01:35:28.030"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:27.998" endtime="20210915 01:35:28.030"/>
+</kw>
+<kw name="Go to Log In Page" library="LoginLogout">
+<doc>User is directed to landing page</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:28.030" endtime="20210915 01:35:28.050"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN-IN-WITH-MIMI}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:28.052" level="INFO">Clicking element 'id=io.mimi.ht:id/alreadyHaveTv'.</msg>
+<status status="PASS" starttime="20210915 01:35:28.050" endtime="20210915 01:35:28.130"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:28.030" endtime="20210915 01:35:28.130"/>
+</kw>
+<kw name="Enter Email Address" library="LoginLogout">
+<doc>Enter user name</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:28.131" endtime="20210915 01:35:28.253"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ENTER_EMAIL}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:28.259" level="INFO">Typing text 'your_new_qa@protonmail.com' into text field 'id=io.mimi.ht:id/loginEmail'</msg>
+<status status="PASS" starttime="20210915 01:35:28.254" endtime="20210915 01:35:29.165"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:28.130" endtime="20210915 01:35:29.165"/>
+</kw>
+<kw name="Enter Password" library="LoginLogout">
+<doc>Enter password</doc>
+<kw name="Input Password" library="AppiumLibrary">
+<arg>${ENTER_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:29.169" level="INFO">Typing password into text field 'id=io.mimi.ht:id/loginPassword'</msg>
+<status status="PASS" starttime="20210915 01:35:29.166" endtime="20210915 01:35:29.715"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:29.166" endtime="20210915 01:35:29.715"/>
+</kw>
+<kw name="Press Login Button" library="LoginLogout">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:29.720" level="INFO">Clicking element 'id=io.mimi.ht:id/loginButton'.</msg>
+<status status="PASS" starttime="20210915 01:35:29.716" endtime="20210915 01:35:30.278"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:29.716" endtime="20210915 01:35:30.279"/>
+</kw>
+<kw name="Login Verified" library="LoginLogout">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/pttEnvironmentResultTv' and @text='Silence']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:30.280" endtime="20210915 01:35:32.260"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:30.279" endtime="20210915 01:35:32.260"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:27.997" endtime="20210915 01:35:32.260"/>
+</kw>
+<kw name="Checks if user can rename and export the Audiogram" library="MimiApp">
+<kw name="View Metrics Of Your Hearing In Silence" library="Audiogram">
+<doc>View Audiogram results from a silent hearing test</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/pttEnvironmentResultTv' and @text='Silence']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:32.261" endtime="20210915 01:35:32.300"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/_title' and @text='Your hearing in silence']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:32.303" level="INFO">Clicking element '//android.widget.TextView[@resource-id='io.mimi.ht:id/_title' and @text='Your hearing in silence']'.</msg>
+<status status="PASS" starttime="20210915 01:35:32.300" endtime="20210915 01:35:32.396"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/audiogramTitleTv</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:32.396" endtime="20210915 01:35:33.519"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:32.261" endtime="20210915 01:35:33.519"/>
+</kw>
+<kw name="Rename and Share Personalized Data" library="Audiogram">
+<doc>Prompts naming of the personal audiogram data with sharing capabilities</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.ImageView[@resource-id='io.mimi.ht:id/actionExport']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:33.520" endtime="20210915 01:35:33.567"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/actionExport</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:33.571" level="INFO">Clicking element 'id=io.mimi.ht:id/actionExport'.</msg>
+<status status="PASS" starttime="20210915 01:35:33.568" endtime="20210915 01:35:33.643"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>io.mimi.ht:id/titleTV</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:33.643" endtime="20210915 01:35:33.743"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/name</arg>
+<arg>${NAME_HEARING_TEST}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:33.748" level="INFO">Typing text 'EarsForFears' into text field 'id=io.mimi.ht:id/name'</msg>
+<status status="PASS" starttime="20210915 01:35:33.744" endtime="20210915 01:35:34.830"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/nextBtn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:34.835" level="INFO">Clicking element 'id=io.mimi.ht:id/nextBtn'.</msg>
+<status status="PASS" starttime="20210915 01:35:34.831" endtime="20210915 01:35:35.359"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='android:id/title']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:35.359" endtime="20210915 01:35:39.428"/>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>2000</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210915 01:35:39.428" endtime="20210915 01:35:41.595"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/audiogramTitleTv' and @text='Audiogram']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:41.595" endtime="20210915 01:35:41.635"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/closeBtn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:41.638" level="INFO">Clicking element 'id=io.mimi.ht:id/closeBtn'.</msg>
+<status status="PASS" starttime="20210915 01:35:41.635" endtime="20210915 01:35:41.710"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/_title']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:41.710" endtime="20210915 01:35:42.002"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:33.520" endtime="20210915 01:35:42.002"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:32.260" endtime="20210915 01:35:42.002"/>
+</kw>
+<doc>Checks that user can see audiogram profile</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210915 01:35:27.996" endtime="20210915 01:35:42.003"/>
+</test>
+<test id="s1-s1-t4" name="User should be able manage there accounts">
+<kw name="Checks if user can manage mimi account" library="MimiApp">
+<kw name="Checks if user can manage account and export JSON data" library="MimiAccount">
+<tag>Smoke</tag>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>99</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>2000</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210915 01:35:42.006" endtime="20210915 01:35:44.062"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/_title' and @text='Your Mimi account']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:44.063" endtime="20210915 01:35:44.236"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@resource-id='io.mimi.ht:id/manageAccountBtn' and @text='Manage account']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:44.237" endtime="20210915 01:35:44.276"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@resource-id='io.mimi.ht:id/manageAccountBtn' and @text='Manage account']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:44.279" level="INFO">Clicking element '//android.widget.Button[@resource-id='io.mimi.ht:id/manageAccountBtn' and @text='Manage account']'.</msg>
+<status status="PASS" starttime="20210915 01:35:44.276" endtime="20210915 01:35:44.364"/>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>99</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>1280</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210915 01:35:44.364" endtime="20210915 01:35:47.278"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text='Manage my account']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:47.278" endtime="20210915 01:35:48.595"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text='Manage my account']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:48.599" level="INFO">Clicking element '//android.widget.Button[@text='Manage my account']'.</msg>
+<status status="PASS" starttime="20210915 01:35:48.596" endtime="20210915 01:35:48.729"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.view.View[@text='Export all my data']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:48.729" endtime="20210915 01:35:48.851"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.view.View[@text='Export all my data']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:48.855" level="INFO">Clicking element '//android.view.View[@text='Export all my data']'.</msg>
+<status status="PASS" starttime="20210915 01:35:48.851" endtime="20210915 01:35:49.459"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text='Export']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:49.459" endtime="20210915 01:35:50.326"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text='Export']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:50.329" level="INFO">Clicking element '//android.widget.Button[@text='Export']'.</msg>
+<status status="PASS" starttime="20210915 01:35:50.326" endtime="20210915 01:35:50.429"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.view.View[@resource-id='data-export--title' and 'Export all my data']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:50.430" endtime="20210915 01:35:50.530"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20210915 01:35:50.530" endtime="20210915 01:35:51.810"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20210915 01:35:51.810" endtime="20210915 01:35:53.044"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:42.005" endtime="20210915 01:35:53.045"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:42.004" endtime="20210915 01:35:53.045"/>
+</kw>
+<doc>Checks that user can see audiogram profile</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210915 01:35:42.003" endtime="20210915 01:35:53.045"/>
+</test>
+<test id="s1-s1-t5" name="User should be able to update and retake hearing test">
+<kw name="Checks if user can Update Hearing ID" library="MimiApp">
+<kw name="Update Hearing ID" library="HearingID">
+<doc>Navigating to the Keep your Hearing ID up-to-date frame layout</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/_title' and @text='Keep your Hearing ID up-to-date']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:53.050" endtime="20210915 01:35:53.640"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${TEST_YOUR_EARS_AGAIN}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:53.641" endtime="20210915 01:35:53.679"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:53.049" endtime="20210915 01:35:53.679"/>
+</kw>
+<kw name="Retake Hearing Test" library="HearingID">
+<doc>Test your ears again</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${TEST_YOUR_EARS_AGAIN}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:53.682" level="INFO">Clicking element '//android.widget.Button[@resource-id='io.mimi.ht:id/renewTestBtn' and @text='Test your ears again']'.</msg>
+<status status="PASS" starttime="20210915 01:35:53.679" endtime="20210915 01:35:53.759"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/titleTextView' and @text='Find a quiet place']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:53.760" endtime="20210915 01:35:54.609"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@resource-id='io.mimi.ht:id/buttonNext' and @text='OK']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:54.612" level="INFO">Clicking element '//android.widget.Button[@resource-id='io.mimi.ht:id/buttonNext' and @text='OK']'.</msg>
+<status status="PASS" starttime="20210915 01:35:54.610" endtime="20210915 01:35:54.679"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/titleTextView' and @text='Connect your headphones to your device']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:54.680" endtime="20210915 01:35:54.729"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:54.732" level="INFO">Clicking element '//android.widget.ImageButton'.</msg>
+<status status="PASS" starttime="20210915 01:35:54.729" endtime="20210915 01:35:55.346"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='io.mimi.ht:id/titleTextView' and @text='Find a quiet place']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:55.346" endtime="20210915 01:35:55.386"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:55.389" level="INFO">Clicking element '//android.widget.ImageButton'.</msg>
+<status status="PASS" starttime="20210915 01:35:55.386" endtime="20210915 01:35:56.013"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:53.679" endtime="20210915 01:35:56.013"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:53.048" endtime="20210915 01:35:56.013"/>
+</kw>
+<doc>Check that Hearing Id can be updatedi</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210915 01:35:53.046" endtime="20210915 01:35:56.014"/>
+</test>
+<test id="s1-s1-t6" name="User Log Out">
+<kw name="User logs out" library="MimiApp">
+<kw name="Log Out" library="LoginLogout">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>99</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>1280</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210915 01:35:56.016" endtime="20210915 01:35:58.065"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/logOutBtn</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:58.065" endtime="20210915 01:35:58.095"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=io.mimi.ht:id/logOutBtn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:58.097" level="INFO">Clicking element 'id=io.mimi.ht:id/logOutBtn'.</msg>
+<status status="PASS" starttime="20210915 01:35:58.095" endtime="20210915 01:35:58.177"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@resource-id='android:id/message' and @text='This will disable your Hearing ID.']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210915 01:35:58.177" endtime="20210915 01:35:58.714"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210915 01:35:58.717" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<status status="PASS" starttime="20210915 01:35:58.714" endtime="20210915 01:35:58.777"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:56.016" endtime="20210915 01:35:58.778"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:56.015" endtime="20210915 01:35:58.778"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:56.014" endtime="20210915 01:35:58.778"/>
+</test>
+<kw name="End App Test" library="Common" type="TEARDOWN">
+<doc>Ends test</doc>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210915 01:35:58.781" endtime="20210915 01:35:59.173"/>
+</kw>
+<status status="PASS" starttime="20210915 01:35:58.781" endtime="20210915 01:35:59.173"/>
+</kw>
+<doc>This is a functional test suite for Mimi Hearning Technology</doc>
+<status status="PASS" starttime="20210915 01:35:05.778" endtime="20210915 01:35:59.174"/>
+</suite>
+<status status="PASS" starttime="20210915 01:35:05.750" endtime="20210915 01:35:59.179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Current</stat>
+<stat pass="3" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Full Regression">Full Regression</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="MimiTest">Full Regression.MimiTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
