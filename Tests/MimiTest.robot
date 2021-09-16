@@ -37,7 +37,7 @@ User should be able to view, rename and export their Audiogram
     MimiApp.User logs in
     MimiApp.Checks if user can rename and export the Audiogram
 
-User should be able manage their accounts
+User should be able to manage their accounts
     [Documentation]  Checks that user can edit account information
     [Tags]  Smoke
     MimiApp.Checks if user can manage mimi account
