@@ -80,7 +80,7 @@
 This project consist of a procedurally written test suite utilizing the Appium library and Robot Framework. This is an automatic regression test suite running on an Android emulator. Test cases are written in the MimiTest.robot file. 
 
 ### Quick Video of the Test in action
-[![Everything Is AWESOME](https://i9.ytimg.com/vi/api5ykXvYOw/mqdefault.jpg?v=614216a3&sqp=CKisiIoG&rs=AOn4CLCFjdo40wkXoYt1DDcxEN1HmRmBzw)](https://youtu.be/api5ykXvYOw "Everything Is AWESOME")
+[![Everything Is AWESOME](https://i9.ytimg.com/vi/api5ykXvYOw/mqdefault.jpg?v=614216a3&sqp=CNjCjIoG&rs=AOn4CLBF9s_RCgje7ALgJivBUdlGZCRgmQ)](https://youtu.be/api5ykXvYOw "Everything Is AWESOME")
 
 
 ### Getting Started 
