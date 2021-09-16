@@ -20,13 +20,13 @@ ${LOGIN_BUTTON}     id=io.mimi.ht:id/loginButton
 ${NAME_HEARING_TEST}    EarsForFears
  
 *** Test Cases ***
-User should be able to log and out of their account
+User should be able to log in and out of their account
     [Documentation]  Checks that user data is stored and is valid
     [Tags]  Current
     MimiApp.User logs in
     MimiApp.User logs out
 
-User should not be able to log into their account if incorrect credentials are provided
+User should not be able to log in into their account if incorrect credentials are provided
     [Documentation]  Checks that invalid credentials wont grant access    
     [Tags]  Current
     MimiApp.Check if user logs in with incorrect password
