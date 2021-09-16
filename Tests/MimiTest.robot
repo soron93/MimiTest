@@ -38,12 +38,12 @@ User should be able to view, rename and export their Audiogram
     MimiApp.Checks if user can rename and export the Audiogram
 
 User should be able manage their accounts
-    [Documentation]  Checks that user can see audiogram profile
+    [Documentation]  Checks that user can edit account information
     [Tags]  Smoke
     MimiApp.Checks if user can manage mimi account
 
 User should be able to update and retake hearing test
-    [Documentation]  Check that Hearing Id can be updatedi
+    [Documentation]  Check that Hearing Id can be updated
     [Tags]  Smoke
     MimiApp.Checks if user can Update Hearing ID        
 
