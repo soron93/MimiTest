@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "appium": "^1.21.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.7",
+    "@codesee/babel-plugin-instrument": "^0.160.0",
+    "@codesee/tracker": "^0.160.0"
   }
 }
