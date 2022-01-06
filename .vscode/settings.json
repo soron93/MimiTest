@@ -4,5 +4,6 @@
         "titleBar.activeBackground": "#0B4848",
         "titleBar.activeForeground": "#EFFCFC"
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "DockerRun.DisableDockerrc": true
 }
